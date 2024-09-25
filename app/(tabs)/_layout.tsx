@@ -1,19 +1,34 @@
 import { Tabs } from 'expo-router';
-import React from 'react';
+import React,{useState} from 'react';
 
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { GestureDetector, Gesture ,PanGestureHandler} from 'react-native-gesture-handler';
 
 export default function TabLayout() {
+  const [isTabBarVisible, setIsTabBarVisible] = useState(true);
   const colorScheme = useColorScheme();
 
+  const handleGestureEvent = (event:any) => {
+    if (event.nativeEvent.translationY < -50) { // Swipe Up
+      setIsTabBarVisible(true);
+    } else if (event.nativeEvent.translationY > 50) { // Swipe Down
+      setIsTabBarVisible(false);
+    }
+  };
+
   return (
+    
+    
     <Tabs
-      screenOptions={{
+      screenOptions={({ route }) => ({
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-      }}>
+        // tabBarStyle: isTabBarVisible ? {} : { display: 'none' }, // Control tab visibility
+        tabBarStyle: route.name === ''  ? { } : {display: 'none'},
+      })}
+      >
       <Tabs.Screen
         name="index"
         options={{
@@ -23,15 +38,9 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
-          ),
-        }}
-      />
+    
     </Tabs>
+    
+  
   );
 }
