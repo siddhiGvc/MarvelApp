@@ -1,20 +1,25 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { useRouter ,Href} from 'expo-router';
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 
 export default function MenuScreen(){
+
+  const router = useRouter();
   const menuItems = [
-    { title: 'RUN', image: require('../../assets/menu1.png') },
-    { title: 'MANUAL TEST', image: require('../../assets/menu2.jpg') },
-    { title: 'PROGRAM SETUP', image: require('../../assets/menu3.png') },
-    { title: 'CALIBRATION', image: require('../../assets/menu4.jpg') },
-    { title: 'AVC ON', image: require('../../assets/menu5.png') },
-    { title: 'FIXED', image: require('../../assets/menu6.png') },
-    { title: 'HOME', image: require('../../assets/menu7.png') },
-    { title: 'EMPTY BUCKET', image: require('../../assets/menu8.png') },
-    { title: 'EMPTY MACHINE', image: require('../../assets/menu9.jpg') },
+    { title: 'RUN', image: require('../../assets/menu1.png') ,path:'/runMenu'},
+    { title: 'MANUAL TEST', image: require('../../assets/menu2.jpg') ,path:'/manualTest'},
+    { title: 'PROGRAM SETUP', image: require('../../assets/menu3.png'),path:'/programSetup' },
+    { title: 'CALIBRATION', image: require('../../assets/menu4.jpg') ,path:'/calMenu'},
+    { title: 'HOME', image: require('../../assets/menu7.png') ,path:'/'},
+    { title: 'EMPTY BUCKET', image: require('../../assets/menu8.png'),path:'/' },
+    { title: 'EMPTY MACHINE', image: require('../../assets/menu9.jpg') ,path:'/'},
   ];
+ 
 
   return (
     <LinearGradient
@@ -26,12 +31,30 @@ export default function MenuScreen(){
         <TouchableOpacity
           key={index}
           style={styles.menuItem}
-          onPress={() => alert(`${item.title} clicked`)}
+          onPress={() =>router.push(`${item.path}` as Href)}
+         
         >
           <Image source={item.image} style={styles.menuImage} />
           <Text style={styles.menuText}>{item.title}</Text>
         </TouchableOpacity>
       ))}
+         <TouchableOpacity
+        
+          style={styles.menuItem}
+          // onPress={() =>router.push(`${item.path}` as Href)}
+         
+        >
+          <Image source={require('../../assets/menu5.png') } style={styles.menuImage} />
+          <Text style={styles.menuText}>AVC ON</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.menuItem}
+          // onPress={() =>router.push(`${item.path}` as Href)}
+         
+        >
+          <Image source={require('../../assets/menu6.png')} style={styles.menuImage} />
+          <Text style={styles.menuText}>FIXED</Text>
+        </TouchableOpacity>
     
     </LinearGradient>
   );
@@ -40,26 +63,28 @@ export default function MenuScreen(){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection:'column',
-    justifyContent:'space-around',
+    width: windowWidth,
+    height: windowHeight,
+    flexDirection:'row',
     flexWrap: 'wrap',
     alignItems: 'center',
-    padding: 10,
+    padding: 8,
     backgroundColor:'black'
   },
   menuItem: {
-    width: 215,
-    height: 90,
-    margin: 10,
+    width: windowWidth/3.21,
+    height: windowHeight/3.45,
+    margin: 5,
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
+    padding:2
   },
   menuImage: {
-    width: 50,
-    height: 50,
-    marginBottom: 10,
+    width: windowWidth/16,
+    height:windowHeight/8,
+    marginBottom: 5,
   },
   menuText: {
     color: '#fff',
