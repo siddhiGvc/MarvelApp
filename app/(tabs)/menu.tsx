@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions } from 'react-native';
+import React,{useState} from 'react';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions ,Button} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter ,Href} from 'expo-router';
 
@@ -9,7 +9,15 @@ const windowHeight = Dimensions.get('window').height;
 
 export default function MenuScreen(){
 
-  const router = useRouter();
+  const [isRunning, setIsRunning] = useState(false);
+
+  const router=useRouter();
+
+  const toggleMachine = () => {
+    setIsRunning(!isRunning);
+    // Send command to machine backend here (via HTTP request or WebSocket)
+  };
+
   const menuItems = [
     { title: 'RUN', image: require('../../assets/menu1.png') ,path:'/runMenu'},
     { title: 'MANUAL TEST', image: require('../../assets/menu2.jpg') ,path:'/manualTest'},
@@ -40,20 +48,44 @@ export default function MenuScreen(){
       ))}
          <TouchableOpacity
         
-          style={styles.menuItem}
-          // onPress={() =>router.push(`${item.path}` as Href)}
+          style={{
+            width: windowWidth/3.21,
+            height: windowHeight/3.45,
+            margin: 5,
+            backgroundColor: !isRunning ? 'black' : 'green',
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderRadius: 10,
+            padding:2
+          }}
+          onPress={toggleMachine}
+        
          
         >
           <Image source={require('../../assets/menu5.png') } style={styles.menuImage} />
           <Text style={styles.menuText}>AVC ON</Text>
+             {/* <Button
+                    onPress={toggleMachine}
+                    title={!isRunning ? 'AVC OFF' : 'AVC ON'}
+                    color={!isRunning ? '#black' : 'green'}
+              /> */}
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.menuItem}
-          // onPress={() =>router.push(`${item.path}` as Href)}
+           style={{
+            width: windowWidth/3.21,
+            height: windowHeight/3.45,
+            margin: 5,
+            backgroundColor: !isRunning ? 'black' : 'green',
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderRadius: 10,
+            padding:2
+          }}
+          onPress={toggleMachine}
          
         >
           <Image source={require('../../assets/menu6.png')} style={styles.menuImage} />
-          <Text style={styles.menuText}>FIXED</Text>
+          <Text style={styles.menuText}>{!isRunning ? 'FIXED' : 'LEARN'}</Text>
         </TouchableOpacity>
     
     </LinearGradient>
@@ -62,13 +94,14 @@ export default function MenuScreen(){
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    
     width: windowWidth,
     height: windowHeight,
     flexDirection:'row',
     flexWrap: 'wrap',
+    justifyContent:'center',
     alignItems: 'center',
-    padding: 8,
+    padding: 5,
     backgroundColor:'black'
   },
   menuItem: {

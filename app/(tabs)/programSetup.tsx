@@ -15,7 +15,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 export default function RunScreen() {
-  const [flexDirection, setflexDirection] = useState('');
+  const [flexDirection, setflexDirection] = useState('H1');
   const [password,setPassword]=useState('');
   const router=useRouter();
 
@@ -38,7 +38,7 @@ export default function RunScreen() {
     <View >
         <View style={styles.row}>
             <View style={styles.subContainer1}>
-                <Text style={styles.head}>H1</Text>
+                <Text style={styles.head}>{flexDirection}</Text>
             </View>
             <View style={styles.subContainer1}>
                 <Text style={styles.title}>PROGRAM SETUP</Text>
@@ -85,7 +85,7 @@ export default function RunScreen() {
     </View>
     <View style={styles.row}>
         <View style={styles.subContainer1}>
-            <Text style={styles.text1}>TGT. WGT                </Text>
+            <Text style={styles.text1}>TGT. WGT                     </Text>
         </View>
        
         <View style={styles.subContainer2}>
@@ -413,11 +413,13 @@ type PreviewLayoutProps = PropsWithChildren<{
     box: {
       width: 50,
       height: 50,
-    },
+    },         
     row: {
+      width:windowWidth/1.3,
       flexDirection: 'row',
       flexWrap: 'wrap',
-      justifyContent:'space-around'
+      justifyContent:'space-between',
+      alignItems:'flex-start'
     },
     button: {
       paddingHorizontal:-10,
@@ -425,7 +427,7 @@ type PreviewLayoutProps = PropsWithChildren<{
       borderRadius: 10,
       backgroundColor: '#D3D3D3',
       alignSelf: 'center',
-      marginHorizontal: '2.6%',
+      marginHorizontal: '2.8%',
       marginBottom: 6,
       minWidth: '15%',
       textAlign: 'center',
