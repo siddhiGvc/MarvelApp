@@ -268,7 +268,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingHorizontal: 8,
     width:windowWidth/6, // Ensures inputs take full width of the container
-    backgroundColor:'white'
+    backgroundColor:'white',
+    color:'black'
   },
   textInput2: {
     height: windowHeight/7.4,
@@ -277,7 +278,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingHorizontal: 8,
     width: windowWidth/4, // Ensures inputs take full width of the container
-    backgroundColor:'pink'
+    backgroundColor:'pink',
+    color:'black'
   },
   textInput3: {
     height: windowHeight/7.4,
@@ -286,7 +288,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingHorizontal: 8,
     width: windowWidth/6, // Ensures inputs take full width of the container
-    backgroundColor:'white'
+    backgroundColor:'white',
+    color:'black'
   },
   textInput4: {
     height: windowHeight/15,
@@ -295,7 +298,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingHorizontal: 8,
     width: windowWidth/7, // Ensures inputs take full width of the container
-    backgroundColor:'white'
+    backgroundColor:'white',
+    color:'black'
   },
  
   

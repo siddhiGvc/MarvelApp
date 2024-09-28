@@ -2,13 +2,17 @@ import React,{useState} from 'react';
 import { View, Text, TouchableOpacity, Image, StyleSheet, Dimensions ,Button} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter ,Href} from 'expo-router';
+import ErrorWindow from '@/components/modals/error';
+import UpdateProjectWindow from '@/components/modals/updateProject';
+import DecimalAdjustWindow from '@/components/modals/decimalAdjust';
+import DisableHeadWindow from '@/components/modals/disableHead';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 
 export default function MenuScreen(){
-
+  const [modalVisible, setModalVisible] = useState(false);
   const [isRunning, setIsRunning] = useState(false);
 
   const router=useRouter();
@@ -24,12 +28,13 @@ export default function MenuScreen(){
     { title: 'PROGRAM SETUP', image: require('../../assets/menu3.png'),path:'/programSetup' },
     { title: 'CALIBRATION', image: require('../../assets/menu4.jpg') ,path:'/calMenu'},
     { title: 'HOME', image: require('../../assets/menu7.png') ,path:'/'},
-    { title: 'EMPTY BUCKET', image: require('../../assets/menu8.png'),path:'/' },
-    { title: 'EMPTY MACHINE', image: require('../../assets/menu9.jpg') ,path:'/'},
+    { title: 'EMPTY BUCKET', image: require('../../assets/menu8.png')},
+    { title: 'EMPTY MACHINE', image: require('../../assets/menu9.jpg') ,path:'/vibratorHead'},
   ];
  
 
   return (
+    <>
     <LinearGradient
     colors={['#008080', '#23B22E']}
     style={styles.container}
@@ -39,7 +44,7 @@ export default function MenuScreen(){
         <TouchableOpacity
           key={index}
           style={styles.menuItem}
-          onPress={() =>router.push(`${item.path}` as Href)}
+          onPress={() =>item.title =='EMPTY BUCKET' ? setModalVisible(true) :router.push(`${item.path}` as Href)}
          
         >
           <Image source={item.image} style={styles.menuImage} />
@@ -87,8 +92,14 @@ export default function MenuScreen(){
           <Image source={require('../../assets/menu6.png')} style={styles.menuImage} />
           <Text style={styles.menuText}>{!isRunning ? 'FIXED' : 'LEARN'}</Text>
         </TouchableOpacity>
+       
     
     </LinearGradient>
+     {/* <ErrorWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
+     {/* <UpdateProjectWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
+     {/* <DecimalAdjustWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
+     <DisableHeadWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+     </>
   );
 };
 
