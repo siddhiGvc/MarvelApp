@@ -6,6 +6,7 @@ import ErrorWindow from '@/components/modals/error';
 import UpdateProjectWindow from '@/components/modals/updateProject';
 import DecimalAdjustWindow from '@/components/modals/decimalAdjust';
 import DisableHeadWindow from '@/components/modals/disableHead';
+import BulkVibWindow from '@/components/modals/bulkVib';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -25,7 +26,7 @@ export default function MenuScreen(){
   const menuItems = [
     { title: 'RUN', image: require('../../assets/menu1.png') ,path:'/runMenu'},
     { title: 'MANUAL TEST', image: require('../../assets/menu2.jpg') ,path:'/manualTest'},
-    { title: 'PROGRAM SETUP', image: require('../../assets/menu3.png'),path:'/vibSetup' },
+    { title: 'PROGRAM SETUP', image: require('../../assets/menu3.png'),path:'/adjustMotorSpeed' },
     { title: 'CALIBRATION', image: require('../../assets/menu4.jpg') ,path:'/calMenu'},
     { title: 'HOME', image: require('../../assets/menu7.png') ,path:'/'},
     { title: 'EMPTY BUCKET', image: require('../../assets/menu8.png')},
@@ -96,9 +97,10 @@ export default function MenuScreen(){
     
     </LinearGradient>
      {/* <ErrorWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
-     <UpdateProjectWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+     {/* <UpdateProjectWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
      {/* <DecimalAdjustWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
      {/* <DisableHeadWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
+     <BulkVibWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> 
      </>
   );
 };

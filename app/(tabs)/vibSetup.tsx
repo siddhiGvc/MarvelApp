@@ -63,7 +63,7 @@ export default function VibSetupScreen() {
             </View>
             <View style={styles.row1}>
                 <View style={styles.input1}>
-                <TextInput style={styles.textInput} autoFocus keyboardType="numeric"  />
+                <TextInput style={styles.textInput} keyboardType="numeric"  />
                 </View>
                 <View style={styles.input1}>
                 <TextInput style={styles.textInput} keyboardType="numeric"  />
