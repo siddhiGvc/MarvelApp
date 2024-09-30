@@ -31,14 +31,18 @@ export default function UpdateProjectWindow({modalVisible,setModalVisible}:any) 
 
             <Text style={styles.modalText}>U disk inserted into the detection, whether to update ?</Text>
             <View style={styles.row}>
-            <Button
-              title="Update Recipe"
-              onPress={() => setModalVisible(false)}
-            />
-            <Button
-              title="Close"
-              onPress={() => setModalVisible(false)}
-            />
+                <View style={styles.subContainer1}>
+                <Button
+                title="Update Recipe"
+                onPress={() => setModalVisible(false)}
+                />
+             </View>
+             <View style={styles.subContainer1}>
+                <Button
+                title="Close"
+                onPress={() => setModalVisible(false)}
+                />
+             </View>
 
             </View>
            
@@ -63,6 +67,13 @@ const styles = StyleSheet.create({
     justifyContent:'space-between',
     alignItems:'stretch',
     
+  },
+  subContainer1: {
+    // flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    marginTop:5,
+    marginHorizontal:'2%'
   },
   openButton: {
     backgroundColor: '#2196F3',

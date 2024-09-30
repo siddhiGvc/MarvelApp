@@ -25,7 +25,7 @@ export default function MenuScreen(){
   const menuItems = [
     { title: 'RUN', image: require('../../assets/menu1.png') ,path:'/runMenu'},
     { title: 'MANUAL TEST', image: require('../../assets/menu2.jpg') ,path:'/manualTest'},
-    { title: 'PROGRAM SETUP', image: require('../../assets/menu3.png'),path:'/programSetup' },
+    { title: 'PROGRAM SETUP', image: require('../../assets/menu3.png'),path:'/vibSetup' },
     { title: 'CALIBRATION', image: require('../../assets/menu4.jpg') ,path:'/calMenu'},
     { title: 'HOME', image: require('../../assets/menu7.png') ,path:'/'},
     { title: 'EMPTY BUCKET', image: require('../../assets/menu8.png')},
@@ -96,9 +96,9 @@ export default function MenuScreen(){
     
     </LinearGradient>
      {/* <ErrorWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
-     {/* <UpdateProjectWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
+     <UpdateProjectWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/>
      {/* <DecimalAdjustWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
-     <DisableHeadWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+     {/* <DisableHeadWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
      </>
   );
 };

@@ -30,9 +30,11 @@ export default function DisableHeadWindow({modalVisible,setModalVisible}:any) {
             <View style={styles.row}>
         <View style={styles.subContainer1}>
                 <Button
+    
                     onPress={toggleMachine}
                     title={isRunning ? 'HEAD 1 ENABLE' : 'HEAD 1 DISABLE'}
                     color={isRunning ? '#007BFF' : 'grey'}
+                   
                 />
         </View>
         <View style={styles.subContainer1}>
@@ -40,6 +42,7 @@ export default function DisableHeadWindow({modalVisible,setModalVisible}:any) {
                     onPress={toggleMachine}
                     title={isRunning ? 'HEAD 2 ENABLE' : 'HEAD 2 DISABLE'}
                     color={isRunning ? '#007BFF' : 'grey'}
+                    
                 />
         </View>
         <View style={styles.subContainer1}>
@@ -47,6 +50,8 @@ export default function DisableHeadWindow({modalVisible,setModalVisible}:any) {
                     onPress={toggleMachine}
                     title={isRunning ? 'HEAD 3 ENABLE' : 'HEAD 3 DISABLE'}
                     color={isRunning ? '#007BFF' : 'grey'}
+                
+                
                 />
         </View>
         <View style={styles.subContainer1}>
@@ -54,6 +59,7 @@ export default function DisableHeadWindow({modalVisible,setModalVisible}:any) {
                     onPress={toggleMachine}
                     title={isRunning ? 'HEAD 4 ENABLE' : 'HEAD 4 DISABLE'}
                     color={isRunning ? '#007BFF' : 'grey'}
+                    
                 />
         </View>
 
@@ -83,7 +89,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent:'space-between',
     alignItems:'center',
-    marginBottom:5
+    marginBottom:5,
+    
    
    
     
@@ -92,7 +99,8 @@ const styles = StyleSheet.create({
     // flex: 1,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    marginTop:5
+    marginTop:5,
+    marginHorizontal:'2%'
   },
   openButton: {
     backgroundColor: '#2196F3',
@@ -132,5 +140,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     width:windowWidth/2.5
   },
+  Button:{
+    borderRadius:10
+  }
 });
 
