@@ -48,6 +48,10 @@ export default function AdjustMotorSpeedScreen() {
     <View style={styles.row}>
         <View style={styles.box}>
             <View style={styles.row1}>
+            <Text style={styles.text}>CURRENT PROGRAM NUMBER : </Text>
+            <TextInput style={styles.textInput} keyboardType='numeric'/>
+            </View>
+            <View style={styles.row1}>
             <Text style={styles.text}> 1-SLOWEST</Text>
             <Text style={styles.text}> 5-FASTEST</Text>
             </View>
@@ -129,12 +133,13 @@ const styles = StyleSheet.create({
   },
   box:{
     width:windowWidth/1.2,
-    height:windowHeight/2.5,
+    height:windowHeight/2,
     borderWidth:4,
     borderRadius:20,
     borderColor:'orange',
     alignItems:'center',
-    justifyContent:'center'
+    justifyContent:'center',
+    marginBottom:10
 
 
   },
@@ -142,6 +147,14 @@ const styles = StyleSheet.create({
     color:'white',
     fontSize:16,
     fontWeight:'400'
+  },
+  textInput:{
+    backgroundColor:'white',
+    width:windowWidth/5,
+    height:windowHeight/7,
+    borderRadius:5,
+    textAlign:'center',
+    fontSize:20
   }
 
  
