@@ -8,6 +8,11 @@ import DecimalAdjustWindow from '@/components/modals/decimalAdjust';
 import DisableHeadWindow from '@/components/modals/disableHead';
 import BulkVibWindow from '@/components/modals/bulkVib';
 import ConfirmLearnWindow from '@/components/modals/confirmLearn';
+import LoginWindow from '@/components/modals/login';
+import AddUserWindow from '@/components/modals/addUser';
+import DeleteUserWindow from '@/components/modals/delteUser';
+import ChangePasswordWindow from '@/components/modals/changePassword';
+import SetuPrivelegeWindow from '@/components/modals/setupPrevilege';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -26,7 +31,7 @@ export default function MenuScreen(){
 
   const menuItems = [
     { title: 'RUN', image: require('../../assets/menu1.png') ,path:'/runMenu'},
-    { title: 'MANUAL TEST', image: require('../../assets/menu2.jpg') ,path:'/manualTest'},
+    { title: 'MANUAL TEST', image: require('../../assets/menu2.png') ,path:'/manualTest'},
     { title: 'PROGRAM SETUP', image: require('../../assets/menu3.png'),path:'/vibratorAdjust' },
     { title: 'CALIBRATION', image: require('../../assets/menu4.jpg') ,path:'/calMenu'},
     { title: 'HOME', image: require('../../assets/menu7.png') ,path:'/'},
@@ -102,7 +107,12 @@ export default function MenuScreen(){
      {/* <DecimalAdjustWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
      {/* <DisableHeadWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
      {/* <BulkVibWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/>  */}
-     <ConfirmLearnWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+     {/* <ConfirmLearnWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
+     {/* <LoginWindow  modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
+     {/* <AddUserWindow  modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
+     {/* <DeleteUserWindow  modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
+     {/* <ChangePasswordWindow  modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
+     <SetuPrivelegeWindow  modalVisible={modalVisible} setModalVisible={setModalVisible}/>
      </>
   );
 };
