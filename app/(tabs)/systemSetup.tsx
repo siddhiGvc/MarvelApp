@@ -291,7 +291,7 @@ const styles = StyleSheet.create({
   button: {
     height: windowHeight/7.4, // Set button height
     width: windowWidth/7, // Ensure the button takes the full width of the container
-    backgroundColor: '#007BFF', // Set your button color
+    backgroundColor: 'green', // Set your button color
     borderRadius: 10, // Rounded corners
     justifyContent: 'center', // Center the text vertically
     alignItems: 'center', // Center the text horizontally
@@ -301,7 +301,7 @@ const styles = StyleSheet.create({
   button1: {
     height: windowHeight/7.4, // Set button height
     width: windowWidth/4, // Ensure the button takes the full width of the container
-    backgroundColor: '#007BFF', // Set your button color
+    backgroundColor: 'brown', // Set your button color
     borderRadius: 10, // Rounded corners
     justifyContent: 'center', // Center the text vertically
     alignItems: 'center', // Center the text horizontally

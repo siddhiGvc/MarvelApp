@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import { Image, StyleSheet, Platform ,View ,Dimensions,Text,TextInput,Button,TouchableOpacity} from 'react-native';
-
+import type {PropsWithChildren} from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import { BarChart } from 'react-native-chart-kit';
 import { useRouter,Href } from 'expo-router';
@@ -15,7 +15,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 export default function CalScreen() {
-
+  const [flexDirection, setflexDirection] = useState('H1');
   const router=useRouter();
 
   return (
@@ -34,7 +34,7 @@ export default function CalScreen() {
       
       
         
-        <View style={styles.buttonContainer}>
+        {/* <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button} onPress={() => console.log('Button 1 Pressed')}>
           <Text style={styles.buttonText}>H1</Text>
         </TouchableOpacity>
@@ -53,7 +53,14 @@ export default function CalScreen() {
         <TouchableOpacity style={styles.button} onPress={() => console.log('Button 1 Pressed')}>
           <Text style={styles.buttonText}>H4</Text>
         </TouchableOpacity>
-        </View>
+        </View> */}
+         <PreviewLayout
+            label=''
+            values={['H1','H2','H3','H4','H5']}
+            selectedValue={flexDirection}
+            setSelectedValue={setflexDirection}>
+            
+            </PreviewLayout>
 
     </View>
 
@@ -279,4 +286,100 @@ const styles = StyleSheet.create({
   }
 
  
+});
+
+
+type PreviewLayoutProps = PropsWithChildren<{
+  label: string;
+  values: string[];
+  selectedValue: string;
+  setSelectedValue: (value: string) => void;
+  children?: React.ReactNode;
+}>;
+
+const PreviewLayout: React.FC<PreviewLayoutProps> = ({
+  label,
+  values,
+  selectedValue,
+  setSelectedValue,
+  children,
+}) => {
+  const router = useRouter();
+
+  return (
+
+      <View style={styles1.row}>
+        {values.map((value:any) => (
+          <TouchableOpacity
+            key={value}
+            onPress={async() => {
+              setSelectedValue(value);
+          
+            }}
+            style={[
+              styles1.button,
+              selectedValue === value && styles1.selected,
+            ]}
+          >
+            <Text
+              style={[
+                styles1.buttonLabel,
+                selectedValue === value && styles1.selectedLabel,
+              ]}
+            >
+              {value}
+            </Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+
+  );
+};
+
+const styles1 = StyleSheet.create({
+ 
+  box: {
+    width: 50,
+    height: 50,
+  },         
+  row: {
+    width:windowWidth/1.3,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent:'space-between',
+    alignItems:'flex-start',
+    marginBottom:7
+  },
+  button: {
+    paddingHorizontal:-10,
+    paddingVertical:15,
+    borderRadius: 10,
+    backgroundColor: '#D3D3D3',
+    alignSelf: 'center',
+    marginHorizontal: '2.8%',
+    marginBottom: 6,
+    minWidth: '10%',
+    textAlign: 'center',
+    justifyContent:'center'
+    
+  },
+  selected: {
+    backgroundColor: 'purple',
+    borderWidth: 0,
+    textAlign:'center'
+  },
+  buttonLabel: {
+    fontSize: 15,
+    fontWeight: '500',
+    color: 'grey',
+    textAlign:'center'
+  },
+  selectedLabel: {
+    color: 'white',
+  },
+  label: {
+    textAlign: 'center',
+    marginBottom: 10,
+    fontSize: 24,
+  },
 });

@@ -19,14 +19,18 @@ export default function TabLayout() {
   };
 
   return (
+
+
+  
     
     
     <Tabs
       screenOptions={({ route }) => ({
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
+        // tabBarStyle: {overflow:'scroll'},
         // tabBarStyle: isTabBarVisible ? {} : { display: 'none' }, // Control tab visibility
-        tabBarStyle: route.name === ''  ? { } : {display: 'none'},
+        tabBarStyle: route.name === ''  ? { } : {display: 'none',overflow:'scroll'},
       })}
       >
       <Tabs.Screen

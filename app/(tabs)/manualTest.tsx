@@ -17,13 +17,38 @@ const windowHeight = Dimensions.get('window').height;
 export default function ManualTestScreen() {
   const [password,setPassword]=useState('');
   const [isRunning, setIsRunning] = useState(false);
+  const [isRunning1, setIsRunning1] = useState(false);
+  const [isRunning2, setIsRunning2] = useState(false);
+  const [isRunning3, setIsRunning3] = useState(false);
+
+  const [isRunning4, setIsRunning4] = useState(false);
+  const [isRunning5, setIsRunning5] = useState(false);
+  const [isRunning6, setIsRunning6] = useState(false);
+  const [isRunning7, setIsRunning7] = useState(false);
+
+  const [isRunning8, setIsRunning8] = useState(false);
+  const [isRunning9, setIsRunning9] = useState(false);
+  const [isRunning10, setIsRunning10] = useState(false);
+  const [isRunning11, setIsRunning11] = useState(false);
+
+  const [isRunning12, setIsRunning12] = useState(false);
+  const [isRunning13, setIsRunning13] = useState(false);
+  const [isRunning14, setIsRunning14] = useState(false);
+  const [isRunning15, setIsRunning15] = useState(false);
+
+  const [isRunning16, setIsRunning16] = useState(false);
+  const [isRunning17, setIsRunning17] = useState(false);
+  const [isRunning18, setIsRunning18] = useState(false);
+  const [isRunning19, setIsRunning19] = useState(false);
+
+  
+
+
+
 
   const router=useRouter();
 
-  const toggleMachine = () => {
-    setIsRunning(!isRunning);
-    // Send command to machine backend here (via HTTP request or WebSocket)
-  };
+  
 
   const data = {
     labels: ['Jan', 'Feb', 'Mar', 'Apr'],
@@ -46,120 +71,120 @@ export default function ManualTestScreen() {
     <View style={styles.row}>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
+                    onPress={()=>setIsRunning(!isRunning)}
                     title={!isRunning ? 'HEAD1' : 'HEAD1'}
                     color={!isRunning ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'HEAD2' : 'HEAD2'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning1(!isRunning1)}
+                    title={!isRunning1 ? 'HEAD2' : 'HEAD2'}
+                    color={!isRunning1 ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'HEAD3' : 'HEAD3'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                    onPress={()=>setIsRunning2(!isRunning2)}
+                    title={!isRunning2 ? 'HEAD3' : 'HEAD3'}
+                    color={!isRunning2 ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'HEAD4' : 'HEAD4'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning3(!isRunning3)}
+                    title={!isRunning3 ? 'HEAD4' : 'HEAD4'}
+                    color={!isRunning3 ? '#007BFF' : 'green'}
                 />
         </View>
     </View>
     <View style={styles.row}>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'DUMP OFF' : 'DUMP ON'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning4(!isRunning4)}
+                    title={!isRunning4 ? 'DUMP OFF' : 'DUMP ON'}
+                    color={!isRunning4 ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'DUMP OFF' : 'DUMP ON'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                    onPress={()=>setIsRunning5(!isRunning5)}
+                    title={!isRunning5 ? 'DUMP OFF' : 'DUMP ON'}
+                    color={!isRunning5 ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'DUMP OFF' : 'DUMP ON'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning6(!isRunning6)}
+                    title={!isRunning6 ? 'DUMP OFF' : 'DUMP ON'}
+                    color={!isRunning6 ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'DUMP Off' : 'DUMP ON'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning7(!isRunning7)}
+                    title={!isRunning7 ? 'DUMP Off' : 'DUMP ON'}
+                    color={!isRunning7 ? '#007BFF' : 'green'}
                 />
         </View>
     </View>
     <View style={styles.row}>
     <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'BULK OFF' : 'BULK ON'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning8(!isRunning8)}
+                    title={!isRunning8 ? 'BULK OFF' : 'BULK ON'}
+                    color={!isRunning8 ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'BULK OFF' : 'BULK ON'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                    onPress={()=>setIsRunning9(!isRunning9)}
+                    title={!isRunning9 ? 'BULK OFF' : 'BULK ON'}
+                    color={!isRunning9 ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'BULK OFF' : 'BULK ON'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning10(!isRunning10)}
+                    title={!isRunning10 ? 'BULK OFF' : 'BULK ON'}
+                    color={!isRunning10 ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'BULK OFF' : 'BULK ON'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning11(!isRunning11)}
+                    title={!isRunning11 ? 'BULK OFF' : 'BULK ON'}
+                    color={!isRunning11 ? '#007BFF' : 'green'}
                 />
         </View>
     </View>
     <View style={styles.row}>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'VIBRATOR TEST' : 'VIBRATOR TEST'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning12(!isRunning12)}
+                    title={!isRunning12 ? 'VIBRATOR TEST' : 'VIBRATOR TEST'}
+                    color={!isRunning12 ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'VIBRATOR TEST' : 'VIBRATOR TEST'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning13(!isRunning13)}
+                    title={!isRunning13 ? 'VIBRATOR TEST' : 'VIBRATOR TEST'}
+                    color={!isRunning13 ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'VIBRATOR TEST' : 'VIBRATOR TEST'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning14(!isRunning14)}
+                    title={!isRunning14 ? 'VIBRATOR TEST' : 'VIBRATOR TEST'}
+                    color={!isRunning14 ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'VIBRATOR TEST' : 'VIBRATOR TEST'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning15(!isRunning15)}
+                    title={!isRunning15 ? 'VIBRATOR TEST' : 'VIBRATOR TEST'}
+                    color={!isRunning15 ? '#007BFF' : 'green'}
                 />
         </View>
 
@@ -172,30 +197,30 @@ export default function ManualTestScreen() {
     <View style={styles.row}>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'CONTINUOS TEST' : 'CONTINUOS TEST'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                    onPress={()=>setIsRunning16(!isRunning16)}
+                    title={!isRunning16 ? 'CONTINUOS TEST' : 'CONTINUOS TEST'}
+                    color={!isRunning16 ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'TEST ONCE' : 'TEST ONCE'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning17(!isRunning17)}
+                    title={!isRunning17 ? 'TEST ONCE' : 'TEST ONCE'}
+                    color={!isRunning17 ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'ENABLE/DISABLE HEAD' : 'ENABLE/DISABLE HEAD'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning18(!isRunning18)}
+                    title={!isRunning18 ? 'ENABLE/DISABLE HEAD' : 'ENABLE/DISABLE HEAD'}
+                    color={!isRunning18 ? '#007BFF' : 'green'}
                 />
         </View>
         <View style={styles.subContainer1}>
                <Button
-                    onPress={toggleMachine}
-                    title={!isRunning ? 'SELECT ALL HEAD' : 'SLECT ALL HEAD'}
-                    color={!isRunning ? '#007BFF' : 'green'}
+                     onPress={()=>setIsRunning19(!isRunning19)}
+                    title={!isRunning19 ? 'SELECT ALL HEAD' : 'SLECT ALL HEAD'}
+                    color={!isRunning19 ? '#007BFF' : 'green'}
                 />
         </View>
 
