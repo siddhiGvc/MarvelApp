@@ -21,6 +21,15 @@ export default function HomeScreen() {
 
   const router=useRouter();
 
+  useEffect(()=>{
+    if(password=='1111')
+    {
+       router.push("/menu");
+    }
+
+  },[password])
+
+
  
   return (
     <LinearGradient
@@ -40,7 +49,7 @@ export default function HomeScreen() {
     <Text style={styles.text1}>Level 2: PROGRAM SETUP</Text>
     <Text style={styles.text1}>Level 3: Calibration / Enable Disable Head</Text>
     <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={() => router.push('/menu' as Href)}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push('/systemSetup' as Href)}>
           <Text style={styles.buttonText}>RUN MACHINE</Text>
         </TouchableOpacity>
     </View>

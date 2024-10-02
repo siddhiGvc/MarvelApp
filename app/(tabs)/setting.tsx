@@ -71,7 +71,7 @@ export default function SettingScreen() {
     </View>
     <View style={styles.row1}>
     <View style={styles.subContainer3}>
-      <TouchableOpacity style={styles.button} onPress={() => router.push('/menu')}>
+      <TouchableOpacity style={styles.button} onPress={() => router.push('/systemSetup')}>
           <Text style={styles.buttonText}>EXIT</Text>
         </TouchableOpacity>
     </View>

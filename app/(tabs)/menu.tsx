@@ -13,6 +13,7 @@ import AddUserWindow from '@/components/modals/addUser';
 import DeleteUserWindow from '@/components/modals/delteUser';
 import ChangePasswordWindow from '@/components/modals/changePassword';
 import SetuPrivelegeWindow from '@/components/modals/setupPrevilege';
+import ErrorWindow1 from '@/components/modals/error1';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -20,23 +21,28 @@ const windowHeight = Dimensions.get('window').height;
 
 export default function MenuScreen(){
   const [modalVisible, setModalVisible] = useState(false);
-  const [isRunning, setIsRunning] = useState(false);
+  const [isRunning1, setIsRunning1] = useState(false);
+  const [isRunning2, setIsRunning2] = useState(false);
 
   const router=useRouter();
 
-  const toggleMachine = () => {
-    setIsRunning(!isRunning);
+  const toggleMachine1 = () => {
+    setIsRunning1(!isRunning1);
+    // Send command to machine backend here (via HTTP request or WebSocket)
+  };
+  const toggleMachine2 = () => {
+    setIsRunning2(!isRunning2);
     // Send command to machine backend here (via HTTP request or WebSocket)
   };
 
   const menuItems = [
     { title: 'RUN', image: require('../../assets/menu1.png') ,path:'/runMenu'},
     { title: 'MANUAL TEST', image: require('../../assets/menu2.png') ,path:'/manualTest'},
-    { title: 'PROGRAM SETUP', image: require('../../assets/menu3.png'),path:'/vibratorAdjust' },
+    { title: 'PROGRAM SETUP', image: require('../../assets/menu3.png'),path:'/programSetup' },
     { title: 'CALIBRATION', image: require('../../assets/menu4.jpg') ,path:'/calMenu'},
     { title: 'HOME', image: require('../../assets/menu7.png') ,path:'/'},
     { title: 'EMPTY BUCKET', image: require('../../assets/menu8.png')},
-    { title: 'EMPTY MACHINE', image: require('../../assets/menu9.jpg') ,path:'/vibratorHead'},
+    { title: 'EMPTY MACHINE', image: require('../../assets/menu9.jpg') ,path:'/emptyMachine'},
   ];
  
 
@@ -64,18 +70,18 @@ export default function MenuScreen(){
             width: windowWidth/3.21,
             height: windowHeight/3.45,
             margin: 5,
-            backgroundColor: !isRunning ? 'black' : 'green',
+            backgroundColor: !isRunning1 ? 'red' : 'green',
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 10,
             padding:2
           }}
-          onPress={toggleMachine}
+          onPress={toggleMachine1}
         
          
         >
           <Image source={require('../../assets/menu5.png') } style={styles.menuImage} />
-          <Text style={styles.menuText}>AVC ON</Text>
+          <Text style={styles.menuText}>{!isRunning1 ? 'AVC OFF' : 'AVC ON'}</Text>
              {/* <Button
                     onPress={toggleMachine}
                     title={!isRunning ? 'AVC OFF' : 'AVC ON'}
@@ -87,22 +93,22 @@ export default function MenuScreen(){
             width: windowWidth/3.21,
             height: windowHeight/3.45,
             margin: 5,
-            backgroundColor: !isRunning ? 'black' : 'green',
+            backgroundColor: !isRunning2 ? 'blue' : 'orange',
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 10,
             padding:2
           }}
-          onPress={toggleMachine}
+          onPress={toggleMachine2}
          
         >
           <Image source={require('../../assets/menu6.png')} style={styles.menuImage} />
-          <Text style={styles.menuText}>{!isRunning ? 'FIXED' : 'LEARN'}</Text>
+          <Text style={styles.menuText}>{!isRunning2 ? 'FIXED' : 'LEARN'}</Text>
         </TouchableOpacity>
        
     
     </LinearGradient>
-     {/* <ErrorWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
+     <ErrorWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/>
      {/* <UpdateProjectWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
      {/* <DecimalAdjustWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
      {/* <DisableHeadWindow modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
@@ -112,7 +118,8 @@ export default function MenuScreen(){
      {/* <AddUserWindow  modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
      {/* <DeleteUserWindow  modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
      {/* <ChangePasswordWindow  modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
-     <SetuPrivelegeWindow  modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+     {/* <SetuPrivelegeWindow  modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
+     {/* <ErrorWindow1 modalVisible={modalVisible} setModalVisible={setModalVisible}/> */}
      </>
   );
 };

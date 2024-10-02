@@ -174,7 +174,7 @@ export default function RunScreen() {
         </TouchableOpacity>
         </View>
         <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={() => router.push('/menu')}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push("/menu")}>
           <Text style={styles.buttonText}>EXIT</Text>
         </TouchableOpacity>
         </View>

@@ -50,7 +50,7 @@ export default function RunScreen() {
         <TouchableOpacity style={styles.button} onPress={() => console.log('Button 1 Pressed')}>
           <Text style={styles.buttonText}>START</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => router.push('/menu' as Href)}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push("/menu")}>
           <Text style={styles.buttonText}>EXIT</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => console.log('Button 3 Pressed')}>

@@ -7,6 +7,9 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import AddUserWindow from '@/components/modals/addUser';
+import DeleteUserWindow from '@/components/modals/delteUser';
+import ChangePasswordWindow from '@/components/modals/changePassword';
 
 
 
@@ -27,6 +30,10 @@ const data = [
 
 export default function UsersScreen() {
   const [password,setPassword]=useState('');
+  const [modalVisible1, setModalVisible1] = useState(false);
+  const [modalVisible2, setModalVisible2] = useState(false);
+  const [modalVisible3, setModalVisible3] = useState(false);
+  // const [modalVisible1, setModalVisible1] = useState(false);
 
   const router=useRouter();
 
@@ -67,13 +74,13 @@ export default function UsersScreen() {
       />
     </View>
       <View style={styles.subContainer2}>
-        <TouchableOpacity style={styles.button} onPress={() => router.push('/menu')}>
+        <TouchableOpacity style={styles.button} onPress={() => setModalVisible1(true)}>
           <Text style={styles.buttonText}>ADD USER PREVILEGE</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => router.push('/menu')}>
+        <TouchableOpacity style={styles.button} onPress={() => setModalVisible2(true)}>
           <Text style={styles.buttonText}>DELETE USER PREVILEGE</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => router.push('/menu')}>
+        <TouchableOpacity style={styles.button} onPress={() => setModalVisible3(true)}>
           <Text style={styles.buttonText}>CHANGE PASSORD</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button} onPress={() => router.push('/menu')}>
@@ -81,6 +88,9 @@ export default function UsersScreen() {
         </TouchableOpacity>
       </View>
     </View>
+    <AddUserWindow modalVisible={modalVisible1} setModalVisible={setModalVisible1} />
+    <DeleteUserWindow modalVisible={modalVisible2} setModalVisible={setModalVisible2} />
+    <ChangePasswordWindow modalVisible={modalVisible3} setModalVisible={setModalVisible3} />
     </LinearGradient>
    
   );

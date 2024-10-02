@@ -45,12 +45,12 @@ export default function SystemSetupScreen() {
             <Text style={styles.title}>SYSTEM SETUP</Text>
         </View>
         <View style={styles.subContainer1}>
-        <TouchableOpacity style={styles.button} onPress={() => router.push('/menu')}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push('/vibratorAdjust')}>
           <Text style={styles.buttonText}>VIBRATOR ADJUST VOLT</Text>
         </TouchableOpacity>
         </View>
         <View style={styles.subContainer1}>
-        <TouchableOpacity style={styles.button} onPress={() => router.push('/menu')}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push('/setting')}>
           <Text style={styles.buttonText}>SETTING WINDOW</Text>
         </TouchableOpacity>
         </View>
